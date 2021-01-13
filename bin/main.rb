@@ -28,6 +28,7 @@ while start.positive?
   # same for each player
 
   if player_one_turn < 1 && player_one_turn > 9
+    puts 'Oups! you made a wrong move'
     puts 'Player one\'s turn!'
     player_one_turn = gets.chomp.to_i
   end
@@ -39,6 +40,7 @@ while start.positive?
   puts 'player two\'s turn'
   player_two_turn = gets.chomp.to_i
   if player_two_turn < 1 && player_two_turn > 9
+    puts 'Oups! you made a wrong move'
     puts 'Player two\'s turn!'
     player_two_turn = gets.chomp.to_i
   end
