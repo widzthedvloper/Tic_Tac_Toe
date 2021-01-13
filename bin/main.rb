@@ -23,7 +23,7 @@ while start.positive?
   puts 'Player one\'s turn!'
   player_one_turn = gets.chomp.to_i
 
-  # here instead of using the if that way i'll check if the number i got from the player 
+  # here instead of using the if that way i'll check if the number i got from the player
   # input is included in the array of possible moves left i'll create later
   # same for each player
 
