@@ -21,17 +21,33 @@ while start.positive?
   # here a methode will be responsible to display the board after each player's move.
   # the board will display after each player,s move except for the first time we start.
 
-  puts '- - -'
-  puts '- - -'
-  puts '- - -'
-
-  puts 'The list of possible moves is: 1 2 3 4 5 6 7 8 9'
-
   puts 'Player one\'s turn!'
   player_one_turn = gets.chomp.to_i
 
+  # here instead of using the if that way i'll check if the number i got from the player 
+  # input is included in the array of possible moves left i'll create later
+  # same for each player
+
+  if player_one_turn < 1 && player_one_turn > 9
+    puts 'Player one\'s turn!'
+    player_one_turn = gets.chomp.to_i
+  end
+
+  puts '- - -'
+  puts '- - -'
+  puts '- - -'
+
   puts 'player two\'s turn'
   player_two_turn = gets.chomp.to_i
+  if player_two_turn < 1 && player_two_turn > 9
+    puts 'Player two\'s turn!'
+    player_two_turn = gets.chomp.to_i
+  end
+
+  puts '- - -'
+  puts '- - -'
+  puts '- - -'
+
   # here instead of checking for only the move each player make i'll check for
   # possible move left, rather the player enter a wrong move, and check the wins cases.
 
