@@ -1,5 +1,7 @@
 #!/usr/bin/env ruby
 
+require_relative '../lib/logic'
+
 puts 'INSTRUCTIONS'
 puts '---------------------------------------------------'
 puts 'A number represents each square spaces on the board'
@@ -12,9 +14,15 @@ player_one = gets.chomp
 
 puts 'Introduce the name of the second player'
 player_two = gets.chomp
-board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
 wins = false
 start = 2
+check = false
+
+print_initial_board = Moves.new
+puts print_initial_board.print_board[0].to_s
+puts print_initial_board.print_board[1].to_s
+puts print_initial_board.print_board[2].to_s
 
 # now i'll display the board and an array whith each available moves
 
@@ -23,18 +31,28 @@ while start < 11
   # here a methode will be responsible to display the board after each player's move.
   # the board will display after each player,s move except for the first time we start.
 
-  puts board[0].to_s
-  puts board[1].to_s
-  puts board[2].to_s
-
   if start.even?
     current_player = player_one
     puts "#{current_player} turn"
-    player_one_turn = gets.chomp.to_i
+    unless check == true
+      player_one_turn = gets.chomp.to_i
+      check_invalid = Moves.new
+      check = check_invalid.invalid_check(player_one_turn)
+    end
+    move = Moves.new
+    move.player_move(player_one_turn, 'x')
+    move.update_invalid_moves(player_one_turn)
   else
     current_player = player_two
     puts "#{current_player} turn"
-    player_two_turn = gets.chomp.to_i
+    unless check == true
+      player_two_turn = gets.chomp.to_i
+      check_invalid = Moves.new
+      check = check_invalid.invalid_check(player_two_turn)
+    end
+    move = Moves.new
+    move.player_move(player_two_turn, '0')
+    move.update_invalid_moves(player_two_turn)
   end
 
   # here instead of using the if that way i'll check if the number i got from the player
@@ -43,9 +61,11 @@ while start < 11
 
   puts 'Oups! you made a wrong move' if player_one_turn < 1 && player_one_turn > 9
 
-  puts board[0].to_s
-  puts board[1].to_s
-  puts board[2].to_s
+  print_initial_board = Moves.new
+  puts print_initial_board.print_board[0].to_s
+  puts print_initial_board.print_board[1].to_s
+  puts print_initial_board.print_board[2].to_s
+  puts print_initial_board.print_invalid_moves.to_s
 
   # here instead of checking for only the move each player make i'll check for
   # possible move left, rather the player enter a wrong move, and check the wins cases.
