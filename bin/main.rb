@@ -12,65 +12,53 @@ player_one = gets.chomp
 
 puts 'Introduce the name of the second player'
 player_two = gets.chomp
-start = 0
+board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+wins = false
+start = 2
 
 # now i'll display the board and an array whith each available moves
 
-while start < 9
+while start < 11
 
   # here a methode will be responsible to display the board after each player's move.
   # the board will display after each player,s move except for the first time we start.
 
-  puts 'Player one\'s turn!'
-  player_one_turn = gets.chomp.to_i
+  puts board[0].to_s
+  puts board[1].to_s
+  puts board[2].to_s
+
+  if start.even?
+    current_player = player_one
+    puts "#{current_player} turn"
+    player_one_turn = gets.chomp.to_i
+  else
+    current_player = player_two
+    puts "#{current_player} turn"
+    player_two_turn = gets.chomp.to_i
+  end
 
   # here instead of using the if that way i'll check if the number i got from the player
   # input is included in the array of possible moves left i'll create later
   # same for each player
 
-  if player_one_turn < 1 && player_one_turn > 9
-    puts 'Oups! you made a wrong move'
-    puts 'Player one\'s turn!'
-    player_one_turn = gets.chomp.to_i
-  end
+  puts 'Oups! you made a wrong move' if player_one_turn < 1 && player_one_turn > 9
 
-  puts '- - -'
-  puts '- - -'
-  puts '- - -'
-
-  puts 'player two\'s turn'
-  player_two_turn = gets.chomp.to_i
-  if player_two_turn < 1 && player_two_turn > 9
-    puts 'Oups! you made a wrong move'
-    puts 'Player two\'s turn!'
-    player_two_turn = gets.chomp.to_i
-  end
-
-  puts '- - -'
-  puts '- - -'
-  puts '- - -'
+  puts board[0].to_s
+  puts board[1].to_s
+  puts board[2].to_s
 
   # here instead of checking for only the move each player make i'll check for
   # possible move left, rather the player enter a wrong move, and check the wins cases.
 
-  winner = if player_one_turn == 1
-
-             "#{player_one} wins!"
-
-           elsif player_two_turn == 2
-
-             "#{player_two} wins!"
-
-           else
-
-             'draw :( !'
-
-           end
-
-  break if winner != ' '
+  if wins
+    puts "#{current_player} is the winner!"
+    break
+  end
 
   start += 1
 
 end
 
-winner != ' ' ? winner : "There's a draw"
+puts "there's a draw" if wins == false
+puts player_one_turn
+puts player_two_turn
