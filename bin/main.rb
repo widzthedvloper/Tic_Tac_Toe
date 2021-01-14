@@ -15,6 +15,7 @@ player_two = gets.chomp
 start = 1
 
 # now i'll display the board and an array whith each available moves
+
 while start.positive?
 
   # here a methode will be responsible to display the board after each player's move.
