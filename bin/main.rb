@@ -12,11 +12,11 @@ player_one = gets.chomp
 
 puts 'Introduce the name of the second player'
 player_two = gets.chomp
-start = 1
+start = 0
 
 # now i'll display the board and an array whith each available moves
 
-while start.positive?
+while start < 9
 
   # here a methode will be responsible to display the board after each player's move.
   # the board will display after each player,s move except for the first time we start.
@@ -67,8 +67,10 @@ while start.positive?
 
            end
 
-  winner != ' ' ? break : next
+  break if winner != ' '
+
+  start += 1
 
 end
 
-puts winner
+winner != ' ' ? winner : "There's a draw"
