@@ -59,8 +59,6 @@ while start < 11
   # input is included in the array of possible moves left i'll create later
   # same for each player
 
-  puts 'Oups! you made a wrong move' if player_one_turn < 1 && player_one_turn > 9
-
   print_initial_board = Moves.new
   puts print_initial_board.print_board[0].to_s
   puts print_initial_board.print_board[1].to_s

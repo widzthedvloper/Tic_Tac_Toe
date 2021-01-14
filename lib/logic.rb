@@ -1,12 +1,8 @@
 class Moves
   @@board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
   @@invalid_move = []
-  def initialize
-    @@invalid_move = []
-  end
 
   def player_move(num, letter)
-
     case num
     when 1 then @@board[0][0] = letter
     when 2 then @@board[0][1] = letter
@@ -35,5 +31,4 @@ class Moves
   def invalid_check(num)
     @@invalid_move.include?(num)
   end
-
 end
