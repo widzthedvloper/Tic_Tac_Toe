@@ -17,7 +17,6 @@ player_two = gets.chomp
 
 wins = false
 start = 2
-check = false
 
 print_initial_board = Moves.new
 puts print_initial_board.print_board[0].to_s
@@ -32,6 +31,14 @@ while start < 11
     player_one_turn = gets.chomp.to_i
     check_invalid = Moves.new
     check = check_invalid.invalid_check(player_one_turn)
+    if player_one_turn > 9
+      start -= 2
+      next
+    end
+    if player_one_turn < 1
+      start -= 2
+      next
+    end
     if check == true
       start -= 2
       next
@@ -45,6 +52,14 @@ while start < 11
     player_two_turn = gets.chomp.to_i
     check_invalid = Moves.new
     check = check_invalid.invalid_check(player_two_turn)
+    if player_two_turn > 9
+      start -= 2
+      next
+    end
+    if player_two_turn < 1
+      start -= 2
+      next
+    end
     if check == true
       start -= 2
       next
