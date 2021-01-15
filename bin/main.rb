@@ -1,12 +1,14 @@
 #!/usr/bin/env ruby
 
 require_relative '../lib/logic'
+require_relative '../lib/winner'
 
 puts 'INSTRUCTIONS'
 puts '---------------------------------------------------'
 puts 'A number represents each square spaces on the board'
 puts 'from 1 up to 9. To make a move specifies a number'
 puts 'in the range of possible numbers at each step into'
+puts 'Once a player made a move it automatically become an invalid move'
 puts 'the game. It\'s that simple :). Enjoy!!!'
 
 puts 'Introduce the name of the first player.'
@@ -71,7 +73,7 @@ while start < 11
       next
     end
     move = Moves.new
-    move.player_move(player_two_turn, '0')
+    move.player_move(player_two_turn, 'o')
     move.update_invalid_moves(player_two_turn)
   end
 
