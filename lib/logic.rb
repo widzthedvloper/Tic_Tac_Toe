@@ -1,5 +1,5 @@
 # rubocop:disable Metrics/CyclomaticComplexity
-
+# rubocop:disable Style/ClassVars
 class Moves
   @@board = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
   @@invalid_move = []
@@ -36,3 +36,4 @@ class Moves
 end
 
 # rubocop:enable Metrics/CyclomaticComplexity
+# rubocop:enable Style/ClassVars
