@@ -32,14 +32,17 @@ while start < 11
     check_invalid = Moves.new
     check = check_invalid.invalid_check(player_one_turn)
     if player_one_turn > 9
+      puts 'Sorry, you\'ve made a wrong move!'
       start -= 2
       next
     end
     if player_one_turn < 1
+      puts 'Sorry, you\'ve made a wrong move!'
       start -= 2
       next
     end
     if check == true
+      puts 'Sorry, you\'ve made a wrong move!'
       start -= 2
       next
     end
@@ -53,14 +56,17 @@ while start < 11
     check_invalid = Moves.new
     check = check_invalid.invalid_check(player_two_turn)
     if player_two_turn > 9
+      puts 'Sorry, you\'ve made a wrong move!'
       start -= 2
       next
     end
     if player_two_turn < 1
+      puts 'Sorry, you\'ve made a wrong move!'
       start -= 2
       next
     end
     if check == true
+      puts 'Sorry, you\'ve made a wrong move!'
       start -= 2
       next
     end
@@ -73,6 +79,7 @@ while start < 11
   puts print_initial_board.print_board[0].to_s
   puts print_initial_board.print_board[1].to_s
   puts print_initial_board.print_board[2].to_s
+  puts 'List of invalid moves'
   puts print_initial_board.print_invalid_moves.to_s
 
   game_winner = Winner.new
