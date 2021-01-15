@@ -21,7 +21,7 @@
 - Enter player's name as prompt in the terminal
 - Enter a number from 1 upto 9 to make a move(choose a spot).
 - You win when 3 of your symbols align vertically, horizontally or diagonally.
-- After nine moves a it's a draw if there's no winner
+- After nine moves it's a draw if there's no winner
 
 
 ## Authors
