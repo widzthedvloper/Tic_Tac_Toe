@@ -75,6 +75,9 @@ while start < 11
   puts print_initial_board.print_board[2].to_s
   puts print_initial_board.print_invalid_moves.to_s
 
+  game_winner = Winner.new
+  wins = game_winner.check_winner(print_initial_board.print_board)
+
   if wins
     puts "#{current_player} is the winner!"
     break
