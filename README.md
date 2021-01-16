@@ -30,7 +30,7 @@
 
 - GitHub: [@widzthedvloper](https://github.com/widzthedvloper)
 - Twitter: [@widzthedvloper](https://twitter.com/widzthedvloper)
-- LinkedIn: [@widzthedvloper](https://www.linkedin.com/in/widzmarc-jean-nesly-phelle-252a26129/))
+- LinkedIn: [@widzthedvloper](https://www.linkedin.com/in/widzmarc-jean-nesly-phelle-252a26129/)
 
 ## 🤝 Contributing
 
