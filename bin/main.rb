@@ -97,5 +97,7 @@ while start < 11
 end
 
 puts "there's a draw" if wins == false
+puts "#{player_one} last move"
 puts player_one_turn
+puts "#{player_two} last move"
 puts player_two_turn
